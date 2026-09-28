@@ -1,4 +1,4 @@
-"""Aprendendo SQLite3 e SQL, comandos básicos 
+"""Aprendendo SQLite3. Comandos básicos 
 aplicados a um teste para um futuro projeto"""
 import sqlite3
 
