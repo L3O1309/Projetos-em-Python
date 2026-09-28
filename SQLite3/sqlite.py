@@ -1,3 +1,5 @@
+"""Aprendendo SQLite3 e SQL, comandos básicos 
+aplicados a um teste para um futuro projeto"""
 import sqlite3
 
 conexao = sqlite3.connect('bancoteste.db')
@@ -7,7 +9,7 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS teste_registro(
                 id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
                 nome TEXT NOT NULL UNIQUE,
                 email TEXT NOT NULL UNIQUE,
-                senha_sem_criptografia TEXT NOT NULL)""")
+                senha_sem_criptografia TEXT NOT NULL)""") #Cria a tabela teste_registro, se não existir
 
 def cadastrar_aluno():
     nome = input("Digite o nome do aluno: ")
@@ -17,10 +19,8 @@ def cadastrar_aluno():
     cursor.execute("""INSERT INTO teste_registro
                     (nome, email, senha_sem_criptografia) VALUES
                     (?, ?, ?)""", (nome, email, senha_sem_criptografia))
-
-cadastrar_aluno()
-cursor.execute("SELECT * FROM teste_registro")
-
+#Função para cadastro na tabela
+cadastrar_aluno() #Chama a função para executar 
 
 conexao.commit()
 conexao.close()
